@@ -1,0 +1,25 @@
+---
+name: Net-CIDR-Set
+version: 0.10
+author:
+  - 'Andy Armstrong <andy.armstrong@messagesystems.com>'
+abstract: Manipulate sets of IP addresses
+license: perl
+resources:
+  license: ~
+requires:
+  Test::More: 0
+provides:
+  Net::CIDR::Set:
+    file: lib/Net/CIDR/Set.pm
+    version: 0.10
+  Net::CIDR::Set::IPv4:
+    file: lib/Net/CIDR/Set/IPv4.pm
+    version: 0.10
+  Net::CIDR::Set::IPv6:
+    file: lib/Net/CIDR/Set/IPv6.pm
+    version: 0.10
+generated_by: Module::Build version 0.31011
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.2.html
+  version: 1.2
