@@ -10,11 +10,11 @@ Nset::CIDR::Set::IPv6 - Encode / decode IPv6 addresses
 
 =head1 VERSION
 
-This document describes Net::CIDR::Set::IPv6 version 0.11
+This document describes Net::CIDR::Set::IPv6 version 0.13
 
 =cut
 
-our $VERSION = '0.11';
+our $VERSION = '0.13';
 
 sub new { bless \my $x, shift }
 
@@ -82,6 +82,7 @@ sub _is_cidr {
   my ( $lo, $hi ) = @_;
   my $mask = ~( $lo ^ $hi );
   my $bits = unpack 'B*', $mask;
+  return unless $hi eq ($lo | $hi);
   return unless $bits =~ /^(1*)0*$/;
   return length( $1 ) - 8;
 }
